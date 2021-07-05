@@ -16,6 +16,7 @@
         <junit.version>4.13.1</junit.version>
         <hydromatic.version>6.0</hydromatic.version>
         <guava.version>19.0</guava.version>
+        <scala.version>2.13.6</scala.version>
     </properties>
 
     <dependencies>
@@ -45,6 +46,27 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-compiler</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-reflect</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_2.13</artifactId>
+            <version>4.2.3</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

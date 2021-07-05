@@ -34,21 +34,31 @@ public class CalciteUtils {
             public RelDataType getRowType(final RelDataTypeFactory typeFactory) {
                 RelDataTypeFactory.Builder builder = typeFactory.builder();
 
-                builder.add("ID", new BasicSqlType(new RelDataTypeSystemImpl() {}, SqlTypeName.INTEGER));
-                builder.add("NAME", new BasicSqlType(new RelDataTypeSystemImpl() {}, SqlTypeName.CHAR));
-                builder.add("AGE", new BasicSqlType(new RelDataTypeSystemImpl() {}, SqlTypeName.INTEGER));
+//                builder.add("ID", new BasicSqlType(new RelDataTypeSystemImpl() {}, SqlTypeName.INTEGER));
+//                builder.add("NAME", new BasicSqlType(new RelDataTypeSystemImpl() {}, SqlTypeName.CHAR));
+//                builder.add("AGE", new BasicSqlType(new RelDataTypeSystemImpl() {}, SqlTypeName.INTEGER));
+
+                builder.add("ID",SqlTypeName.INTEGER);
+                builder.add("NAME",SqlTypeName.CHAR,10);
+                builder.add("AGE",SqlTypeName.INTEGER);
+
                 return builder.build();
             }
         });
 
-        rootSchema.add("JOBS", new AbstractTable() {
+        rootSchema.add("VISITS", new AbstractTable() {
             @Override
             public RelDataType getRowType(final RelDataTypeFactory typeFactory) {
                 RelDataTypeFactory.Builder builder = typeFactory.builder();
 
-                builder.add("ID", new BasicSqlType(new RelDataTypeSystemImpl() {}, SqlTypeName.INTEGER));
-                builder.add("NAME", new BasicSqlType(new RelDataTypeSystemImpl() {}, SqlTypeName.CHAR));
-                builder.add("COMPANY", new BasicSqlType(new RelDataTypeSystemImpl() {}, SqlTypeName.CHAR));
+//                builder.add("ID", new BasicSqlType(new RelDataTypeSystemImpl() {}, SqlTypeName.INTEGER));
+//                builder.add("URL", new BasicSqlType(new RelDataTypeSystemImpl() {}, SqlTypeName.CHAR));
+//                builder.add("DURATION", new BasicSqlType(new RelDataTypeSystemImpl() {}, SqlTypeName.INTEGER));
+// borrow from org.apache.calcite.plan.RelOptUtilTest
+                builder.add("ID",SqlTypeName.INTEGER);
+                builder.add("URL",SqlTypeName.CHAR,10);
+                builder.add("DURATION",SqlTypeName.INTEGER);
+
                 return builder.build();
             }
         });
